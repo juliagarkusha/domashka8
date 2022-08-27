@@ -7,18 +7,17 @@ const btnFollowLinkElement = document.getElementById('followLink');
 const userLinkElement = document.getElementById('userLink');
 
 const getUserInfo = (message) => {
-    const retryGetInfo = () => getUserInfo(message);
-    const val = prompt(message);
+    const value = prompt(message);
 
-    if (val === null) {
+    if (value === null) {
         return;
     }
 
-    if (val === '') {
-        retryGetInfo();
+    if (value === '') {
+        getUserInfo(message);
     }
 
-    return val;
+    return value;
 }
 
 const createLinkHandler = (linkValue, linkElement, btnLinkElement) => {
